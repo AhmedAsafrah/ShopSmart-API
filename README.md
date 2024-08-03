@@ -1,111 +1,54 @@
-# What is Create-express-with-typescript
-  ``Create express with typescript`` is a template That is used to create a quick basic template with a typescript application without any configuration. It's easy to use and does not need to headache to install the multiple dependencies which are required every time when you create a new project structure.
-  You don't need to set up a command and configuration file.
-  
+ShopSmart API
 
+ShopSmart API is a robust and intuitive backend e-commerce platform designed to streamline the management of shops, products, categories, and hotlines. Built with Node.js, Express, TypeScript, and MySQL, this API leverages TypeORM to manage database interactions, offering a smart solution for developers looking to implement e-commerce functionalities with ease.
+Key Features
 
-## Installation
-  If you want to create a basic structure in ``express app with typescript`` You just run only one command on our terminal. But make sure ``Node js`` is already installed in your system. 
-  And also npm version is`` 5.0 `` or later
-  
+    Shop Management: Easily create, retrieve, and manage shop information. Each shop can have associated products and a dedicated hotline, ensuring comprehensive management.
+    Product Management: Create, retrieve, and manage products with ease. The API supports relations between products and shops, as well as categories, making it simple to organize and query products.
+    Category Management: Create and manage product categories, allowing for organized and efficient product categorization and retrieval.
+    Hotline Management: Manage hotlines associated with shops, ensuring each shop has a direct line for customer support.
 
- ## 🚀 Usage
+Technical Highlights
 
- Run the below command on the terminal and install the Express application Boilerplate code with all the configurations. 
+    Data Validation: Each API endpoint is equipped with robust validation to ensure data integrity and reliability.
+    Error Handling: The API includes custom error handling to provide meaningful error messages and maintain smooth operations.
+    Entity Relationships: The API models real-world relationships such as:
+        One-to-Many between Shops and Products.
+        Many-to-Many between Products and Categories.
+        One-to-One between Shops and Hotlines.
+    Security: Shop passwords are hashed before being stored in the database to ensure data security.
 
- ```bash 
- npx create-express-with-typescript app-name
- ```
- 
- ## How to Start Application.
- If you look up the script section on the package.json file you can get four command `` Start `` ``build`` ``dev`` and ``test`` If you want to start the Server you should run
- 
- ```bash
- npm run start
- ```
-npm run start or `` npm start`` command starts your app.
+Installation and Setup
+1. Create a New Express App
 
-## How to Create a build in Typescript-Express
-if you want to create a build in the Typescript-Express application you just run only one command, This command generates a build in the dist directory which is presented in your current working directory.
-```bash
-  npm run build
- ```
- ## How to start a server in development Mode
- 
- We are already Handel your development repeatability to ``build``  ``start``  and ``restart`` our server every time. You only need to run one command and start building our application when you save the file application is rebuilt and restarted automatically. 
- ```bash
-  npm run dev
- ```
+npx create-express-with-typescript ecommerce-shop
 
+2. Navigate to the Project Directory
 
+cd ecommerce-shop
 
+3. Install Dependencies
 
-## Configuration Json File
+npm install typeorm mysql
 
-   * You can change our ``name`` As per your requirement
-   * You can change `` Version `` as well if you have needed
-   * You can remove the ``bin`` command because it's does't need any more when you application successfully generated.
-   * You can also change author name
+4. Update Configuration Files
 
+    Adjust package.json and tsconfig.json as needed for your project.
+    Set up your MySQL database and configure TypeORM.
 
- ```json
-{
-  "name": "create-express-with-typescript",
-  "version": "1.0.0",
-  "description": "Create Express app is a tamplate which is use to Create a express app templete api",
-  "main": "app.js",
-  "bin": {
-    "create-express": "./bin/createExpress.js"
-  },
-  "private": "true",
-  "scripts": {
-    "start": "npx tsc && nodemon dist/app.js",
-    "build": "npx tsc",
-    "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/app.js\" ",
-    "test": "jest"
-  },
-  "keywords": [
-    "create-express-app",
-    "express-app-template"
-  ],
-  "author": "Aadarsh Singh",
-  "license": "ISC",
-  "dependencies": {
-    "bcrypt": "^5.1.0",
-    "cors": "^2.8.5",
-    "dotenv": "^16.0.3",
-    "express": "^4.18.2"
-  },
-  "devDependencies": {
-    "@types/express": "^4.17.14",
-    "@types/jest": "^29.2.2",
-    "@types/node": "^18.11.9",
-    "concurrently": "^7.5.0",
-    "nodemon": "^2.0.20",
-    "supertest": "^6.3.1",
-    "ts-jest": "^29.0.3",
-    "typescript": "^4.8.4"
-  }
-}
+5. Run the Application
 
-```
- Above some dev dependency as well as dependency some of the dependency is required to run the express application Like `` express `` `` @types/express `` `` nodemode`` ``Typescript `` and  `` @types/node `` So you can't remove these dependency.
- And other dependency you can remove as per your requirement.
- 
- 
- 
- 
- 
- 
-## 📝 License
-Copyright © 2019 [Aadarsh Singh](https://github.com/aadarshbabu).<br />
-This project is [MIT](https://github.com/codeefi) licensed.
+npm run start
 
+Use npm run dev for development mode with hot-reloading.
+API Endpoints
 
-## Author
-👤 **Aadarsh Singh**
+The ShopSmart API provides endpoints for:
 
-[Aadarsh Singh](https://codewithsingh.blogspot.com)
-[Github](https://github.com/aadarshbabu)
-[NPM](https://www.npmjs.com/~aadarshsingh)
+    Shop: Create shops, retrieve shops by ID, and optionally retrieve all shops with their products.
+    Product: Create products, retrieve all products, and retrieve products by ID.
+    Category: Create categories and retrieve all categories.
+    Hotline: Create and manage hotlines associated with shops.
+
+Each endpoint includes proper data validation and error handling to ensure reliable and secure operations.
 
